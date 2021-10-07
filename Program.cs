@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 namespace PersonElevAnställd
 {
@@ -6,25 +6,6 @@ namespace PersonElevAnställd
     {
         static void Main(string[] args)
         {
-         
-      
-          
-         /*   plist.Add(new Anställd("Nisse", "700101-5600",25000));
-            plist.Add(new Elev("Kajsa", "20010506-2600",2019,"Teknik"));
-            Console.Write("Ange namn: ");
-            string namn=Console.ReadLine();
-              Console.Write("Ange personnummer: ");
-            string personnr=Console.ReadLine();
-              Console.Write("Ange lön: ");
-            int lön=int.Parse(Console.ReadLine());
-           string allt = namn + personnr + lön;
-           
-            Console.WriteLine(allt);*/
-         
-          /*  foreach(var item in plist)
-            {
-                Console.WriteLine(item);
-            }*/
     List<Person> plist = new List<Person>();
               int menyval = -1;
           while (menyval != 0)
@@ -35,9 +16,10 @@ namespace PersonElevAnställd
                Console.WriteLine("3 skriv upp alla elever.");
                Console.WriteLine("4 skriv upp alla anställda.");
                 Console.WriteLine("5 Lägg till chef");
-                 Console.WriteLine("6 Avsluta programmet");
+                 Console.WriteLine("6 Skriv upp alla personer");
+                   Console.WriteLine("7 Avsluta programmet");
                int meny = int.Parse(Console.ReadLine());
-               if (meny==2)//Varför 2 ==
+               if (meny==2)
                {
                  
                   Console.Write("Ange namn: ");
@@ -89,6 +71,13 @@ namespace PersonElevAnställd
                   plist.Add(new Chef(namn, personnr, lön, rank));
                }
                if(meny==6)
+               {
+                   foreach (Person item in plist)
+                   {
+                       Console.WriteLine(item);
+                   }
+               }
+               if(meny==7)
                {
                    break;
                }
